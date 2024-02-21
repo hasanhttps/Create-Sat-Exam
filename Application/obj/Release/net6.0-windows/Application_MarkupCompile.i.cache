@@ -1,0 +1,20 @@
+﻿Application
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\hasan\source\repos\Create Sat Exam\Application\obj\Release\net6.0-windows\
+Application
+none
+false
+TRACE;RELEASE;NET;NET6_0;NETCOREAPP
+C:\Users\hasan\source\repos\Create Sat Exam\Application\App.xaml
+71424507140
+
+201553766599
+228-1558905333
+Views\CreateExamView.xaml;Views\CreateModuleView.xaml;Views\EditModuleView.xaml;Views\ExamsView.xaml;Views\MainView.xaml;Views\StatisticsView.xaml;Views\StudentsAnswersPage.xaml;
+
+True
+

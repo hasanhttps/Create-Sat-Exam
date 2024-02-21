@@ -1,0 +1,40 @@
+﻿<Page x:Class="Application.Views.StudentsAnswersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Application.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="StudentsAnswers" Background="#EFECF8">
+
+    <Grid>
+        <ListView ItemsSource="{Binding StudentsAnswers}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding QuestionNumber}"
+                        Header="Question Number" />
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding StudentAnswer}"
+                        Header="Student's Answer" />
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding CorrectAnswer}"
+                        Header="Correct Answer" />
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding isCorrect}"
+                        Header="Is Correct" />
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding Point}"
+                        Header="Question Point" />
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding Module.Subject}"
+                        Header="Module Subject" />
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding Module.ModuleNumber}"
+                        Header="Module Number" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

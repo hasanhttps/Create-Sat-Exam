@@ -1,0 +1,14 @@
+C:\Users\hasan\source\repos\Create Sat Exam\Database\bin\Release\net6.0-windows\Database.deps.json
+C:\Users\hasan\source\repos\Create Sat Exam\Database\bin\Release\net6.0-windows\Database.runtimeconfig.json
+C:\Users\hasan\source\repos\Create Sat Exam\Database\bin\Release\net6.0-windows\Database.dll
+C:\Users\hasan\source\repos\Create Sat Exam\Database\bin\Release\net6.0-windows\Database.pdb
+C:\Users\hasan\source\repos\Create Sat Exam\Database\obj\Release\net6.0-windows\Database.csproj.AssemblyReference.cache
+C:\Users\hasan\source\repos\Create Sat Exam\Database\obj\Release\net6.0-windows\Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hasan\source\repos\Create Sat Exam\Database\obj\Release\net6.0-windows\Database.AssemblyInfoInputs.cache
+C:\Users\hasan\source\repos\Create Sat Exam\Database\obj\Release\net6.0-windows\Database.AssemblyInfo.cs
+C:\Users\hasan\source\repos\Create Sat Exam\Database\obj\Release\net6.0-windows\Database.csproj.CoreCompileInputs.cache
+C:\Users\hasan\source\repos\Create Sat Exam\Database\obj\Release\net6.0-windows\Database.dll
+C:\Users\hasan\source\repos\Create Sat Exam\Database\obj\Release\net6.0-windows\refint\Database.dll
+C:\Users\hasan\source\repos\Create Sat Exam\Database\obj\Release\net6.0-windows\Database.pdb
+C:\Users\hasan\source\repos\Create Sat Exam\Database\obj\Release\net6.0-windows\Database.genruntimeconfig.cache
+C:\Users\hasan\source\repos\Create Sat Exam\Database\obj\Release\net6.0-windows\ref\Database.dll

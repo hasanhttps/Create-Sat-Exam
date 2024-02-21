@@ -1,0 +1,113 @@
+﻿<Page x:Class="Application.Views.CreateModuleView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Application.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="CreateModuleView" Background="#EFECF8">
+
+    <Grid>
+        <ScrollViewer>
+            <StackPanel ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <materialDesign:Card Width="800" Height="250" Padding="8" VerticalAlignment="Top" Margin="0 50 0 0">
+                    <StackPanel>
+                        <TextBox
+                            Text="{Binding CurrentModule.ModuleNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            Margin="20"
+                            FontSize="20"
+                            VerticalAlignment="Top"
+                            materialDesign:HintAssist.Hint="Module Number"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />   
+
+                        <StackPanel Orientation="Horizontal" Margin="20 0 20 20">
+                            <TextBlock Text="Module Time :        " FontSize="20" VerticalAlignment="Bottom" Foreground="Gray" Margin="0 0 0 6"/>
+                            <TextBox Width="70" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding CurrentModule.Time, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Minute" FontSize="20" VerticalAlignment="Top"/>
+
+                            <ComboBox materialDesign:HintAssist.Hint="Subject" Width="150" FontSize="20" VerticalAlignment="Bottom" Margin="335 0 0 0" SelectedValue="{Binding CurrentModule.Subject, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                <ComboBoxItem Content="Sat Verbal"/>
+                                <ComboBoxItem Content="Sat Math"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                    </StackPanel>
+
+
+                </materialDesign:Card>
+
+                <ListView ItemsSource="{Binding Questions}" materialDesign:ListBoxItemAssist.ShowSelection="False" HorizontalAlignment="Center">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <materialDesign:Card Width="800" Height="450" Padding="8" Margin="0 20 0 0">
+
+                                    <StackPanel Margin="20">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding QuestionNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                            <TextBlock Text=". "/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBox Width="630" Text="{Binding QuestionText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Background="White" Height="100" Margin="0 5 20 0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Question Text" AcceptsReturn="True" Style="{StaticResource MaterialDesignOutlinedTextBox}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+                                            <StackPanel>
+                                                <TextBox Text="{Binding QuestionPoint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="15" Width="140" materialDesign:HintAssist.Hint="Point"/>
+                                                <Button HorizontalAlignment="Left" Margin="10 10 0 0" Style="{StaticResource MaterialDesignFloatingActionDarkButton}" Height="45" Width="45" Command="{Binding DataContext.ImageAddCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Page}}}" CommandParameter="{Binding QuestionNumber}">
+                                                    <materialDesign:PackIcon
+                                                        Width="25"
+                                                        Height="25"
+                                                        Kind="ImageAdd" />
+                                                </Button>
+                                            </StackPanel>
+                                        </StackPanel>
+
+                                        <TextBlock Text="Answers" FontSize="25" Margin="0 15 0 0"/>
+
+                                        <ListView ItemsSource="{Binding Answers}" materialDesign:ListBoxItemAssist.ShowSelection="False">
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <StackPanel Orientation="Horizontal" Margin="0 -5 0 0">
+                                                            <TextBox Text="{Binding AnswerText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="630"/>
+                                                            <RadioButton Margin="20 0 0 0" GroupName="{Binding QuestionId}" IsChecked="{Binding isCorrect, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </StackPanel>
+
+                                </materialDesign:Card>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <StackPanel Orientation="Horizontal" Margin="0 30 550 0"> 
+                    
+                    <Button Content="Submit" FontSize="20" Height="40" Width="150" Margin="1050 0 10 0" HorizontalAlignment="Right" Command="{Binding SubmitButtonCommand}"/>
+                    <Button Content="Next" FontSize="20" Height="40" Width="150" HorizontalAlignment="Right" Command="{Binding NextButtonCommand}"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+        <materialDesign:PopupBox
+            PlacementMode="BottomAndAlignCentres"
+            VerticalAlignment="Bottom" HorizontalAlignment="Right"
+            Margin="0 0 30 100"
+            Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}"
+            ToolTip="Add Question"
+            ToolTipService.Placement="Right">
+            <StackPanel>
+                <Button
+                    Content="Close"
+                    Command="{Binding CreateQuestionCommand}"
+                    ToolTip="Add close question" />
+                <Button
+                    Content="Open"
+                    Command="{Binding CreateOpenEndedQuestionCommand}"
+                    ToolTip="Add open ended question" />
+            </StackPanel>
+        </materialDesign:PopupBox>
+    </Grid>
+</Page>

@@ -1,0 +1,20 @@
+﻿Application
+
+
+winexe
+C#
+.cs
+C:\Users\hasan\source\repos\Create Sat Exam\Application\obj\Debug\net6.0-windows\win-x64\
+Application
+none
+false
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+C:\Users\hasan\source\repos\Create Sat Exam\Application\App.xaml
+6208372934
+
+16-1051650394
+2281909011026
+Views\CreateExamView.xaml;Views\CreateModuleView.xaml;Views\EditModuleView.xaml;Views\ExamsView.xaml;Views\MainView.xaml;Views\StatisticsView.xaml;
+
+False
+

@@ -1,0 +1,33 @@
+﻿<Page x:Class="Application.Views.CreateExamView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Application.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="CreateExamView" Background="#EFECF8">
+
+    <Grid>
+        <materialDesign:Card Width="800" Height="250" Padding="8" VerticalAlignment="Center">
+            <StackPanel>
+                <TextBox
+                    Text="{Binding QuizName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Margin="20"
+                    FontSize="20"
+                    VerticalAlignment="Top"
+                    materialDesign:HintAssist.Hint="Quiz Name"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+                <StackPanel Orientation="Horizontal" Margin="20 0 20 20">
+                    <TextBlock Text="Activation Date :        " FontSize="20" VerticalAlignment="Center" Foreground="Gray"/>
+                    <DatePicker Width="250" FontSize="20" materialDesign:HintAssist.Hint="Exam Activation Date" Margin="0 0 40 0" materialDesign:TextFieldAssist.HasClearButton="True" SelectedDate="{Binding QuizActivationDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <materialDesign:TimePicker Width="250" FontSize="20" materialDesign:HintAssist.Hint="Exam Activation Time" materialDesign:TextFieldAssist.HasClearButton="True" SelectedTime="{Binding QuizActivationTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+                <Button Content="Create" Width="150" Margin="0 20 20 0" HorizontalAlignment="Right" Command="{Binding CreateButtonCommand}"/>
+            </StackPanel>
+        </materialDesign:Card>
+    </Grid>
+</Page>
